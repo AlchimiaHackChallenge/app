@@ -1,5 +1,7 @@
 package mx.nakva.apphack
 
+import android.app.Activity
+import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
@@ -27,10 +29,21 @@ class MainViewModel @Inject constructor(): ViewModel() {
     }
 
     fun onClickNewSession() {
-        mSurveyLauncher.value = Event(1)
+        mSurveyLauncher.value = Event(ACTIVITY_SURVEY)
     }
-    
+
+    fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == ACTIVITY_SURVEY && resultCode == Activity.RESULT_OK) {
+            if (data != null) {
+                val sId = data.getStringExtra("id")
+                mState.codeValue = sId
+                onClickSearchBtn()
+            }
+        }
+    }
+
     companion object {
         private const val TAG = "MainViewModel"
+        private const val ACTIVITY_SURVEY = 1
     }
 }
