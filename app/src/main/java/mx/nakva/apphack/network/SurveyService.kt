@@ -5,8 +5,10 @@ import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
+import com.google.gson.Gson
 import com.google.gson.JsonObject
 import mx.nakva.apphack.features.SurveyState
+import mx.nakva.apphack.models.Survey
 import org.json.JSONObject
 import javax.inject.Inject
 
@@ -15,7 +17,6 @@ import javax.inject.Inject
  * Powered by Arteko
  */
 class SurveyService @Inject constructor(private val requestQueue: RequestQueue) {
-
 
     fun sendSurvey(state: SurveyState, onComplete: (sId: Int?) -> Unit) {
         val url = NetworkConstant.BASE_URL
@@ -43,6 +44,26 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
             },
             Response.ErrorListener { error: VolleyError ->
                 Log.d(TAG, "NAILAH sendSurvey: Error")
+                onComplete(null)
+                error.printStackTrace()
+            }) {
+        }
+        requestQueue.add(request)
+    }
+
+    fun getSurvey(id: String, onComplete: (Survey?) -> Unit) {
+        val url = "${NetworkConstant.BASE_URL}$id"
+        val request = object : JsonObjectRequest(Method.GET, url, JSONObject(),
+            Response.Listener<JSONObject> { response: JSONObject? ->
+                if (response != null) {
+                    val survey = Gson().fromJson(response.toString(), Survey::class.java)
+                    onComplete(survey)
+                }
+                else {
+                    onComplete(null)
+                }
+            },
+            Response.ErrorListener { error: VolleyError ->
                 onComplete(null)
                 error.printStackTrace()
             }) {
