@@ -7,5 +7,6 @@ package mx.nakva.apphack.models
 data class Survey (
     val sId: String,
     val name: String,
+    val city: String,
     val age: String){
 }

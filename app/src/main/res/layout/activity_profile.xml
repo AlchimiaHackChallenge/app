@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:indeterminate="true"
             android:indeterminateTint="@color/colorPrimary"
-            android:visibility="invisible" />
+            android:visibility="@{state.progressVisibility}" />
 
         <ImageView
             android:layout_width="150dp"
@@ -53,6 +53,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
+            android:text="@{state.name}"
             tools:text="name" />
 
         <TextView
@@ -60,6 +61,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
+            android:text="@{state.age}"
             tools:text="age" />
 
         <TextView
@@ -67,6 +69,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
+            android:text="@{state.city}"
             tools:text="city" />
 
         <TextView
@@ -87,6 +90,7 @@
             android:background="@color/colorPrimaryLight"
             android:textAlignment="center"
             android:textColor="@color/colorPrimary"
+            android:text="@{state.id}"
             tools:text="123213" />
 
         <LinearLayout
