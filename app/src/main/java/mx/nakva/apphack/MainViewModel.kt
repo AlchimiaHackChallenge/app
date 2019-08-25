@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import mx.nakva.apphack.wrappers.Event
+import mx.nakva.apphack.wrappers.ProfileLauncher
 import javax.inject.Inject
 
 /**
@@ -18,14 +19,16 @@ class MainViewModel @Inject constructor(): ViewModel() {
 
     private val mState = MainState()
     private val mSurveyLauncher = MutableLiveData<Event<Int>>()
+    private val mProfileLauncher = MutableLiveData<Event<ProfileLauncher>>()
 
     fun getState(): MainState = mState
 
     fun getSurveyObserver(): LiveData<Event<Int>> = mSurveyLauncher
 
+    fun getProfileObserver(): LiveData<Event<ProfileLauncher>> = mProfileLauncher
+
     fun onClickSearchBtn() {
-        Log.d(TAG, "NAILAH onClickSearchBtn: ")
-        mState.progressVisibility = View.VISIBLE
+        mProfileLauncher.value = Event(ProfileLauncher(ACTIVITY_PROFILE, mState.codeValue))
     }
 
     fun onClickNewSession() {
@@ -45,5 +48,6 @@ class MainViewModel @Inject constructor(): ViewModel() {
     companion object {
         private const val TAG = "MainViewModel"
         private const val ACTIVITY_SURVEY = 1
+        private const val ACTIVITY_PROFILE = 2
     }
 }

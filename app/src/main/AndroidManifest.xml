@@ -24,6 +24,10 @@
         <activity android:name=".features.survey.SurveyActivity"
             android:screenOrientation="portrait"
             android:label="@string/survey"/>
+
+        <activity android:name=".features.profile.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/survey"/>
     </application>
 
 </manifest>
