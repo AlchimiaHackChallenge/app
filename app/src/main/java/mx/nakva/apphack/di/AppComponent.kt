@@ -8,7 +8,7 @@ import javax.inject.Singleton
  * Powered by Arteko
  */
 @Singleton
-@Component(modules = [AppModule::class])
+@Component(modules = [AppModule::class, ViewModelModule::class])
 interface AppComponent {
 
 }
