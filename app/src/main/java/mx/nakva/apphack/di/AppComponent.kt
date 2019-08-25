@@ -2,6 +2,7 @@ package mx.nakva.apphack.di
 
 import dagger.Component
 import mx.nakva.apphack.MainActivity
+import mx.nakva.apphack.features.profile.ProfileActivity
 import mx.nakva.apphack.features.survey.SurveyActivity
 import javax.inject.Singleton
 
@@ -15,4 +16,5 @@ import javax.inject.Singleton
 interface AppComponent {
     fun inject(target: MainActivity)
     fun inject(target: SurveyActivity)
+    fun inject(target: ProfileActivity)
 }
