@@ -27,7 +27,7 @@
 
         <activity android:name=".features.profile.ProfileActivity"
             android:screenOrientation="portrait"
-            android:label="@string/survey"/>
+            android:theme="@style/AppTheme.NoTitle"/>
     </application>
 
 </manifest>
