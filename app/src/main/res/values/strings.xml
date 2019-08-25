@@ -27,4 +27,7 @@
     <string name="age">Edad</string>
     <string name="city">Ciudad</string>
     <string name="quote">Cotizar ahora</string>
+    <string name="error">Error</string>
+    <string name="error_creating_intent">Se produjo un error al crear la Intension, Intentalo de nuevo mas tarde</string>
+    <string name="ok">OK</string>
 </resources>

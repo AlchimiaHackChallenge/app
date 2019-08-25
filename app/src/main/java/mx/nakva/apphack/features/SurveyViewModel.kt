@@ -19,10 +19,13 @@ class SurveyViewModel @Inject constructor(private val mService: SurveyService): 
 
     private var mState: SurveyState = SurveyState()
     private var mCloseActivityResult = MutableLiveData<Event<SurveyActivityResponse>>()
+    private var mErrorDialog = MutableLiveData<Event<Int>>()
 
     fun getState() = mState
 
     fun getCloseActivityResultObserver(): LiveData<Event<SurveyActivityResponse>> = mCloseActivityResult
+
+    fun getErrorObserver(): LiveData<Event<Int>> = mErrorDialog
 
     fun onClickNextBtn() {
         mService.sendSurvey(mState) { sId ->
@@ -31,7 +34,7 @@ class SurveyViewModel @Inject constructor(private val mService: SurveyService): 
                 mCloseActivityResult.value = Event(SurveyActivityResponse(Activity.RESULT_OK, sId))
             }
             else {
-                //mCloseActivityResult.value = Event(SurveyActivityResponse(Activity.RESULT_CANCELED, null))
+                mErrorDialog.value = Event(1)
             }
         }
     }

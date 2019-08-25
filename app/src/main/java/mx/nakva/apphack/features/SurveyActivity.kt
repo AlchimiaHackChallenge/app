@@ -1,6 +1,7 @@
 package mx.nakva.apphack.features
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -33,6 +34,7 @@ class SurveyActivity: AppCompatActivity() {
         (application as MyApp).appComponent.inject(this)
         val vm = ViewModelProviders.of(this, mViewModelFactory)[SurveyViewModel::class.java]
         vm.getCloseActivityResultObserver().observe(this, Observer { onCloseActivityResultChanged(it) })
+        vm.getErrorObserver().observe(this, Observer { onErrorEventChanged(it) })
         initBinder(vm)
     }
 
@@ -53,6 +55,23 @@ class SurveyActivity: AppCompatActivity() {
             }
             setResult(res.resultCode, intent)
             finish()
+        }
+    }
+
+    private fun onErrorEventChanged(event: Event<Int>?) {
+        event?.getContentIfNotHandled()?.let {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle(R.string.error)
+            builder.setMessage(R.string.error_creating_intent)
+            builder.setPositiveButton(R.string.ok) { dialog, _ ->
+                dialog.dismiss()
+            }
+            builder.setOnDismissListener {
+                setResult(Activity.RESULT_CANCELED)
+                finish()
+            }
+            val alert = builder.create()
+            alert.show()
         }
     }
 
