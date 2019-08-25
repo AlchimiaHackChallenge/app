@@ -16,7 +16,7 @@ import javax.inject.Inject
  */
 class SurveyService @Inject constructor(private val requestQueue: RequestQueue) {
 
-    fun sendSurvey(state: SurveyState, onComplete: (JSONObject?) -> Unit) {
+    fun sendSurvey(state: SurveyState, onComplete: (sId: Int?) -> Unit) {
         val url = "http://10.10.4.244:3000/api/intent"
         val param = JSONObject()
         val widget = JSONObject()
@@ -32,7 +32,13 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
         val request = object : JsonObjectRequest(Method.POST, url, param,
             Response.Listener<JSONObject> { response: JSONObject? ->
                 Log.d(TAG, "NAILAH sendSurvey: success $response")
-                onComplete(response)
+                if (response != null && response.has("s_id")) {
+                    val sId = response.getInt("s_id")
+                    onComplete(sId)
+                }
+                else {
+                    onComplete(null)
+                }
             },
             Response.ErrorListener { error: VolleyError ->
                 Log.d(TAG, "NAILAH sendSurvey: Error")

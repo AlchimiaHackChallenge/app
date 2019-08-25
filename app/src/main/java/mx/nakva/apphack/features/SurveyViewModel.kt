@@ -18,8 +18,8 @@ class SurveyViewModel @Inject constructor(private val mService: SurveyService): 
     fun getState() = mState
 
     fun onClickNextBtn() {
-        mService.sendSurvey(mState) { json ->
-            Log.d(TAG, "NAILAH onClickNextBtn: $json")
+        mService.sendSurvey(mState) { sId ->
+            Log.d(TAG, "NAILAH onClickNextBtn: $sId")
         }
     }
 
