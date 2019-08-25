@@ -9,17 +9,9 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        initViewModel()
     }
 
-    private fun initViewModel() {
-        (this.application as MyApp).appComponent.inject(this)
-        val vm = ViewModelProviders.of(this, viewModelFactory)[MainViewModel::class.java]
-    }
 }
