@@ -43,11 +43,15 @@ class SurveyActivity: AppCompatActivity() {
         binder.state = vm.getState()
     }
 
-    private fun onCloseActivityResultChanged(event: Event<Int>?) {
-        event?.getContentIfNotHandled()?.let { sId ->
-            val intent = Intent()
-            intent.putExtra("id", sId)
-            setResult(Activity.RESULT_OK, intent)
+    private fun onCloseActivityResultChanged(event: Event<SurveyActivityResponse>?) {
+        event?.getContentIfNotHandled()?.let { res ->
+            var intent: Intent? = null
+            val sId = res.sId
+            if (sId != null) {
+                intent = Intent()
+                intent.putExtra("id", sId)
+            }
+            setResult(res.resultCode, intent)
             finish()
         }
     }
