@@ -47,5 +47,4 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
             }
         }
     }
-
 }

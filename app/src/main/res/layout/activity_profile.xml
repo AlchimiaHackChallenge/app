@@ -149,7 +149,7 @@
                     android:layout_margin="8dp"
                     android:backgroundTint="@color/green"
                     android:textColor="@color/textIcons"
-                    android:text="@string/quote"
+                    android:text="@string/more"
                     />
 
             </LinearLayout>
@@ -203,7 +203,7 @@
                     android:layout_margin="8dp"
                     android:backgroundTint="@color/green"
                     android:textColor="@color/textIcons"
-                    android:text="@string/quote"
+                    android:text="@string/more"
                     />
 
             </LinearLayout>
