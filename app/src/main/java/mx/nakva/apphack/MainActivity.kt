@@ -9,8 +9,16 @@ import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
+//    @Inject
+//    lateinit var viewModelFactory: ViewModelProvider.Factory
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        initDI()
+    }
+
+    private fun initDI() {
+
     }
 }
