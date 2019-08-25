@@ -16,8 +16,9 @@ import javax.inject.Inject
  */
 class SurveyService @Inject constructor(private val requestQueue: RequestQueue) {
 
+
     fun sendSurvey(state: SurveyState, onComplete: (sId: Int?) -> Unit) {
-        val url = "http://10.10.4.244:3000/api/intent"
+        val url = NetworkConstant.BASE_URL
         val param = JSONObject()
         val widget = JSONObject()
         widget.put("q1", state.q1Response)
