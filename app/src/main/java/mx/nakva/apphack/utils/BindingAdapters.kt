@@ -12,7 +12,9 @@ object BindingAdapters {
 
     @JvmStatic @BindingAdapter("bind:imageUrl")
     fun setImageUrl(view: ImageView, url: String) {
-        Picasso.with(view.context).load(url).fit().centerInside().into(view)
+        if (url != "" ) {
+            Picasso.with(view.context).load(url).fit().centerInside().into(view)
+        }
     }
 
 }
