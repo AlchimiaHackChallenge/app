@@ -30,5 +30,6 @@ class MainActivity : AppCompatActivity() {
         val binder: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binder.lifecycleOwner = this
         binder.vm = vm
+        binder.state = vm.getState()
     }
 }

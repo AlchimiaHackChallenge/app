@@ -3,13 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
-
-        <variable
-            name="vm"
-            type="mx.nakva.apphack.MainViewModel" />
-
+        <variable name="vm" type="mx.nakva.apphack.MainViewModel" />
+        <variable name="state" type="mx.nakva.apphack.MainState" />
     </data>
 
     <LinearLayout
@@ -24,7 +20,6 @@
             android:indeterminate="true"
             android:indeterminateTint="@color/colorPrimary"
             android:visibility="invisible" />
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -65,6 +60,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputCode"
                     android:layout_width="match_parent"
+                    android:text="@={state.codeValue}"
                     android:layout_height="wrap_content"
                     android:hint="@string/client_code"
                     android:inputType="text" />
