@@ -1,4 +1,4 @@
-package mx.nakva.apphack.features
+package mx.nakva.apphack.features.survey
 
 import android.app.Activity
 import android.app.AlertDialog

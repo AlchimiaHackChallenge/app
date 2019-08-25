@@ -1,4 +1,4 @@
-package mx.nakva.apphack.features
+package mx.nakva.apphack.features.survey
 
 import android.view.View
 import androidx.databinding.BaseObservable

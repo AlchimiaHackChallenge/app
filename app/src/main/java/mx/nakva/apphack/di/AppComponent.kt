@@ -2,7 +2,7 @@ package mx.nakva.apphack.di
 
 import dagger.Component
 import mx.nakva.apphack.MainActivity
-import mx.nakva.apphack.features.SurveyActivity
+import mx.nakva.apphack.features.survey.SurveyActivity
 import javax.inject.Singleton
 
 /**

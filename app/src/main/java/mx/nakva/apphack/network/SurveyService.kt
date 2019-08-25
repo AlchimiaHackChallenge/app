@@ -6,8 +6,7 @@ import com.android.volley.Response
 import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.google.gson.Gson
-import com.google.gson.JsonObject
-import mx.nakva.apphack.features.SurveyState
+import mx.nakva.apphack.features.survey.SurveyState
 import mx.nakva.apphack.models.Survey
 import org.json.JSONObject
 import javax.inject.Inject

@@ -7,10 +7,10 @@
     <data>
         <variable
             name="vm"
-            type="mx.nakva.apphack.features.SurveyViewModel" />
+            type="mx.nakva.apphack.features.survey.SurveyViewModel" />
         <variable
             name="state"
-            type="mx.nakva.apphack.features.SurveyState" />
+            type="mx.nakva.apphack.features.survey.SurveyState" />
     </data>
 
     <ScrollView

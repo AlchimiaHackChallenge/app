@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import mx.nakva.apphack.MainViewModel
-import mx.nakva.apphack.features.SurveyViewModel
+import mx.nakva.apphack.features.survey.SurveyViewModel
 import javax.inject.Singleton
 
 /**

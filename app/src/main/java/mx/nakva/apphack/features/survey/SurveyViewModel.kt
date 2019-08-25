@@ -1,9 +1,8 @@
-package mx.nakva.apphack.features
+package mx.nakva.apphack.features.survey
 
 import android.app.Activity
 import android.util.Log
 import android.view.View
-import android.widget.RadioGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -18,7 +17,8 @@ import javax.inject.Inject
  */
 class SurveyViewModel @Inject constructor(private val mService: SurveyService): ViewModel() {
 
-    private var mState: SurveyState = SurveyState()
+    private var mState: SurveyState =
+        SurveyState()
     private var mCloseActivityResult = MutableLiveData<Event<SurveyActivityResponse>>()
     private var mErrorDialog = MutableLiveData<Event<Int>>()
 
@@ -34,7 +34,12 @@ class SurveyViewModel @Inject constructor(private val mService: SurveyService): 
             mState.progressVisibility = View.INVISIBLE
             Log.d(TAG, "NAILAH onClickNextBtn: $sId")
             if (sId != null) {
-                mCloseActivityResult.value = Event(SurveyActivityResponse(Activity.RESULT_OK, sId))
+                mCloseActivityResult.value = Event(
+                    SurveyActivityResponse(
+                        Activity.RESULT_OK,
+                        sId
+                    )
+                )
             }
             else {
                 mErrorDialog.value = Event(1)

@@ -8,7 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import mx.nakva.apphack.databinding.ActivityMainBinding
-import mx.nakva.apphack.features.SurveyActivity
+import mx.nakva.apphack.features.survey.SurveyActivity
 import mx.nakva.apphack.wrappers.Event
 import javax.inject.Inject
 
