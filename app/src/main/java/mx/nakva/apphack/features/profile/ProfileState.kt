@@ -45,4 +45,60 @@ class ProfileState: BaseObservable() {
             field = value
             notifyPropertyChanged(BR.id)
         }
+
+    @get:Bindable
+    var product1Url: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product1Url)
+        }
+
+    @get:Bindable
+    var product1Price: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product1Price)
+        }
+
+    @get:Bindable
+    var product1CurrentPrice: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product1CurrentPrice)
+        }
+
+    @get:Bindable
+    var product1Model: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product1Model)
+        }
+
+    @get:Bindable
+    var product2Url: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product2Url)
+        }
+
+    @get:Bindable
+    var product2Price: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product2Price)
+        }
+
+    @get:Bindable
+    var product2CurrentPrice: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product2CurrentPrice)
+        }
+
+    @get:Bindable
+    var product2Model: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.product2Model)
+        }
 }
