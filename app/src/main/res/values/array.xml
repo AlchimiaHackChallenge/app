@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="status">
+        <item>Checando Modelos</item>
+        <item>Tramite de Crédito</item>
+        <item>Interesado</item>
+        <item>No mostró interés</item>
+    </array>
+</resources>

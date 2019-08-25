@@ -2,7 +2,7 @@
     <string name="app_name">AppHack</string>
     <string name="client_code">Código de Cliente</string>
     <string name="search">Buscar</string>
-    <string name="new_session">Crear nueva sesión</string>
+    <string name="new_session">Genera nueva recomendación</string>
     <string name="select_answer">Selecciona una respuesta.</string>
     <string name="survey_description">Únicamente podrás constestar una pregunta por bloque</string>
     <string name="q1">1.- ¿Es tu primera moto?</string>

@@ -12,6 +12,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="AppTheme.Home">
+        <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@color/textIcons</item>
+    </style>
+    <style name="MyCustomTextInputStyle" parent="">
+        <item name="android:textColorHint">@color/textIcons</item>
+        <item name="android:color">@color/textIcons</item>
+        <item name="hintTextAppearance">@color/textIcons</item>
+    </style>
+
+    <style name="MyCustomEditTextStyle" parent="">
+        <item name="android:textColorHint">@color/textIcons</item>
+        <item name="android:color">@color/textIcons</item>
+        <item name="android:textColor">@color/textIcons</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
