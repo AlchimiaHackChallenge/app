@@ -15,6 +15,7 @@
 
 <ScrollView
     android:layout_width="match_parent"
+    android:background="#ffffff"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -211,6 +212,42 @@
 
             </LinearLayout>
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginTop="8dp"
+            android:text="Check List de Cliente"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"
+            android:text="Cliente toco a la moto"
+            />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"
+            android:text="Cliente subio a la moto"
+            />
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"
+            android:text="Cliente pregunto por credito"
+            />
+
     </LinearLayout>
 </ScrollView>
 </layout>

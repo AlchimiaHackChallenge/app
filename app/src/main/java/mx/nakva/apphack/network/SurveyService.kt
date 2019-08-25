@@ -18,6 +18,8 @@ import javax.inject.Inject
 class SurveyService @Inject constructor(private val requestQueue: RequestQueue) {
 
     fun sendSurvey(state: SurveyState, onComplete: (sId: String?) -> Unit) {
+        onComplete("asdad")
+        /*
         val url = NetworkConstant.BASE_URL
         val param = JSONObject()
         val widget = JSONObject()
@@ -48,6 +50,7 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
             }) {
         }
         requestQueue.add(request)
+         */
     }
 
     fun getSurvey(id: String, onComplete: (Survey?) -> Unit) {
