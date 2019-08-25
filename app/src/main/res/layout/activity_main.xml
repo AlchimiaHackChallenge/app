@@ -1,79 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:indeterminate="true"
-        android:visibility="invisible"
-        android:indeterminateTint="@color/colorPrimary"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+    <data>
 
+        <variable
+            name="vm"
+            type="mx.nakva.apphack.MainViewModel" />
 
-    <RelativeLayout
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="16dp">
+        android:orientation="vertical">
 
-        <View
+        <ProgressBar
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
-            android:layout_height="0.5dp"
-            android:background="#aeaeae"
-            android:layout_centerVertical="true"
-            android:id="@+id/separator"
-            />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_above="@+id/separator"
             android:layout_height="wrap_content"
-            android:text="@string/search"
-            android:layout_marginTop="16dp"
-            android:layout_centerHorizontal="true"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="@color/textIcons"
-            android:id="@+id/btnSearch"
-            />
+            android:indeterminate="true"
+            android:indeterminateTint="@color/colorPrimary"
+            android:visibility="invisible" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/labelCode"
-            android:layout_above="@+id/btnSearch"
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/inputCode"
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="32dp"
+                android:background="#aeaeae" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/separator"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/search"
+                android:onClick="@{() -> vm.onClickSearchBtn()}"
+                android:textColor="@color/textIcons" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/labelCode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/client_code"
-                android:inputType="text" />
+                android:layout_above="@+id/btnSearch">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/inputCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/client_code"
+                    android:inputType="text" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/new_session"
-            android:layout_below="@+id/separator"
-            android:layout_centerHorizontal="true"
-            android:paddingStart="32dp"
-            android:paddingEnd="32dp"
-            android:backgroundTint="@color/colorPrimary"
-            android:textColor="@color/textIcons"
-            android:id="@+id/btnNewSession"
-            />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnNewSession"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/separator"
+                android:layout_centerHorizontal="true"
+                android:onClick="@{() -> vm.onClickNewSession()}"
+                android:backgroundTint="@color/colorPrimary"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                android:text="@string/new_session"
+                android:textColor="@color/textIcons" />
 
-    </RelativeLayout>
-</LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</layout>
