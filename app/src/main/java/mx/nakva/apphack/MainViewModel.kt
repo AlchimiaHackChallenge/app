@@ -10,6 +10,10 @@ import javax.inject.Inject
  */
 class MainViewModel @Inject constructor(): ViewModel() {
 
+    private val mState = MainState()
+
+    fun getState(): MainState = mState
+
     fun onClickSearchBtn() {
         Log.d(TAG, "NAILAH onClickSearchBtn: ")
     }
