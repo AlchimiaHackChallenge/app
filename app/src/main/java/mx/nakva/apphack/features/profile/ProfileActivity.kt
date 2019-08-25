@@ -14,6 +14,7 @@ import com.squareup.picasso.Picasso
 import mx.nakva.apphack.MyApp
 import mx.nakva.apphack.R
 import mx.nakva.apphack.databinding.ActivityProfileBinding
+import mx.nakva.apphack.features.detail.DetailActivity
 import mx.nakva.apphack.wrappers.Event
 import javax.inject.Inject
 
@@ -39,6 +40,7 @@ class ProfileActivity: AppCompatActivity() {
         val id = intent.getStringExtra("id")
         vm.loadSurvey(id)
         vm.getErrorObserver().observe(this, Observer { onErrorEventChanged(it) })
+        vm.getDetailObserver().observe(this, Observer { onDetailEventChanged(it) })
     }
 
     private fun bindView(vm: ProfileViewModel) {
@@ -65,6 +67,13 @@ class ProfileActivity: AppCompatActivity() {
             }
             val alert = builder.create()
             alert.show()
+        }
+    }
+
+    private fun onDetailEventChanged(event: Event<String>?) {
+        event?.getContentIfNotHandled()?.let { data ->
+            val intent = DetailActivity.getIntent(this, data)
+            startActivity(intent)
         }
     }
 

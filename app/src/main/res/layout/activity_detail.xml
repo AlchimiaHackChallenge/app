@@ -45,7 +45,6 @@
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:text="@{state.product1Model}"
                 tools:text="Name" />
 
             <TextView
@@ -54,7 +53,6 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
-                android:text="@{state.product1Price}"
                 android:textStyle="italic"
                 tools:text="De $200.00" />
 
@@ -63,7 +61,6 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/red"
-                android:text="@{state.product1CurrentPrice}"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="A $133.00" />
@@ -76,7 +73,6 @@
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
                 android:layout_margin="16dp"
-                android:text="@{state.product1Price}"
                 android:textStyle="italic"
                 tools:text="Description" />
 

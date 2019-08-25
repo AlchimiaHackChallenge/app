@@ -5,6 +5,7 @@ import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.gson.Gson
 import mx.nakva.apphack.models.Survey
 import mx.nakva.apphack.network.SurveyService
 import mx.nakva.apphack.wrappers.Event
@@ -19,10 +20,14 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
 
     private var mState =  ProfileState()
     private var mError = MutableLiveData<Event<Int>>()
+    private var mDetailLauncher = MutableLiveData<Event<String>>()
+    private var mSurvey: Survey? = null
 
     fun getState() = mState
 
     fun getErrorObserver(): LiveData<Event<Int>> = mError
+
+    fun getDetailObserver(): LiveData<Event<String>> = mDetailLauncher
 
     init {
 
@@ -32,6 +37,7 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
     fun loadSurvey(id: String) {
         mState.progressVisibility = View.VISIBLE
         mService.getSurvey(id) { survey: Survey? ->
+            this.mSurvey = survey
             mState.progressVisibility = View.INVISIBLE
             if (survey != null) {
                 mState.name = survey.name.toUpperCase()
@@ -55,5 +61,17 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
                 mError.value = Event(1)
             }
         }
+    }
+
+    fun onViewMoreR1() {
+        val survey = mSurvey ?: return
+        val r1 = survey.recommendations.r1
+        mDetailLauncher.value = Event(Gson().toJson(r1))
+    }
+
+    fun onViewMoreR2() {
+        val survey = mSurvey ?: return
+        val r2 = survey.recommendations.r2
+        mDetailLauncher.value = Event(Gson().toJson(r2))
     }
 }

@@ -28,6 +28,10 @@
         <activity android:name=".features.profile.ProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoTitle"/>
+
+        <activity android:name=".features.detail.DetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoTitle"/>
     </application>
 
 </manifest>

@@ -150,6 +150,7 @@
                     android:backgroundTint="@color/green"
                     android:textColor="@color/textIcons"
                     android:text="@string/more"
+                    android:onClick="@{ () -> vm.onViewMoreR1() }"
                     />
 
             </LinearLayout>
@@ -200,6 +201,7 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:onClick="@{ () -> vm.onViewMoreR2() }"
                     android:layout_margin="8dp"
                     android:backgroundTint="@color/green"
                     android:textColor="@color/textIcons"
