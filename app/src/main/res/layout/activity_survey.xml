@@ -22,13 +22,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ProgressBar
-                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:indeterminate="true"
-                android:indeterminateTint="@color/colorPrimary"
-                android:visibility="invisible" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -289,6 +282,14 @@
                     android:onClick="@{ () -> vm.onClickNextBtn() }"
                     android:layout_marginBottom="16dp"
                     />
+
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/colorPrimary"
+                    android:visibility="@{state.progressVisibility}" />
 
             </LinearLayout>
         </LinearLayout>

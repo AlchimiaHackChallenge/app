@@ -2,6 +2,7 @@ package mx.nakva.apphack.features
 
 import android.app.Activity
 import android.util.Log
+import android.view.View
 import android.widget.RadioGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -28,7 +29,9 @@ class SurveyViewModel @Inject constructor(private val mService: SurveyService): 
     fun getErrorObserver(): LiveData<Event<Int>> = mErrorDialog
 
     fun onClickNextBtn() {
+        mState.progressVisibility = View.VISIBLE
         mService.sendSurvey(mState) { sId ->
+            mState.progressVisibility = View.INVISIBLE
             Log.d(TAG, "NAILAH onClickNextBtn: $sId")
             if (sId != null) {
                 mCloseActivityResult.value = Event(SurveyActivityResponse(Activity.RESULT_OK, sId))

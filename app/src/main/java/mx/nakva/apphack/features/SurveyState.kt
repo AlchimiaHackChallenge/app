@@ -1,5 +1,6 @@
 package mx.nakva.apphack.features
 
+import android.view.View
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import androidx.databinding.library.baseAdapters.BR
@@ -14,6 +15,13 @@ class SurveyState: BaseObservable() {
     var q2Response: String = "1"
     var q3Response: String = "1"
     var q4Response: String = "1"
+
+    @get:Bindable
+    var progressVisibility: Int = View.INVISIBLE
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.progressVisibility)
+        }
 
     @get:Bindable
     var name: String = ""
