@@ -2,9 +2,12 @@ package mx.nakva.apphack.features
 
 import android.util.Log
 import android.widget.RadioGroup
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import mx.nakva.apphack.R
 import mx.nakva.apphack.network.SurveyService
+import mx.nakva.apphack.wrappers.Event
 import javax.inject.Inject
 
 /**
@@ -14,12 +17,21 @@ import javax.inject.Inject
 class SurveyViewModel @Inject constructor(private val mService: SurveyService): ViewModel() {
 
     private var mState: SurveyState = SurveyState()
+    private var mCloseActivityResult = MutableLiveData<Event<Int>>()
 
     fun getState() = mState
+
+    fun getCloseActivityResultObserver(): LiveData<Event<Int>> = mCloseActivityResult
 
     fun onClickNextBtn() {
         mService.sendSurvey(mState) { sId ->
             Log.d(TAG, "NAILAH onClickNextBtn: $sId")
+            if (sId != null) {
+                mCloseActivityResult.value = Event(sId)
+            }
+            else {
+                //TODO raise an error
+            }
         }
     }
 
