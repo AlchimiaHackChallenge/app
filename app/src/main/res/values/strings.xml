@@ -3,4 +3,23 @@
     <string name="client_code">Código de Cliente</string>
     <string name="search">Buscar</string>
     <string name="new_session">Crear nueva sesión</string>
+    <string name="select_answer">Selecciona una respuesta.</string>
+    <string name="survey_description">Únicamente podrás constestar una pregunta por bloque</string>
+    <string name="q1">1.- ¿Es tu primera moto?</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="q2">2.- ¿Qué proposito tendrá tu moto?</string>
+    <string name="work">Trabajo</string>
+    <string name="personal">Personal</string>
+    <string name="fun">Recreativo</string>
+    <string name="q3">3.- ¿De qué presupuesto dispones?</string>
+    <string name="until_15_k">Hasta $15,000.00</string>
+    <string name="btw_15k_20k">$15,000.00 a $20,000.00</string>
+    <string name="btw_20k_30k">$20,000.00 a $30,000.00</string>
+    <string name="more_30k">Más de $30,000.00</string>
+    <string name="q4">4.- ¿Qué rendimiento de combustible esperas?</string>
+    <string name="less_100km">Menos de 100 km</string>
+    <string name="btw_100km_200km">Entre 100 km y 200 km</string>
+    <string name="btw_200km_300km">Entre 200 km y 300 km</string>
+    <string name="next">Siguiente</string>
 </resources>
