@@ -80,7 +80,7 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold"
-            tools:text="NO. DE REFERENCIA" />
+            android:text="@string/ref_number" />
 
         <TextView
             android:layout_width="match_parent"

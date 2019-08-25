@@ -30,4 +30,5 @@
     <string name="error">Error</string>
     <string name="error_creating_intent">Se produjo un error al crear la Intension, Intentalo de nuevo mas tarde</string>
     <string name="ok">OK</string>
+    <string name="ref_number">NO. DE REFERENCIA</string>
 </resources>

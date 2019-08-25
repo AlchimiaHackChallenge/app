@@ -51,6 +51,233 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
     }
 
     fun getSurvey(id: String, onComplete: (Survey?) -> Unit) {
+        val json = "{\n" +
+                "  \"_id\": \"5d62509be1626d3df609aece\",\n" +
+                "  \"widget\": {\n" +
+                "    \"q1\": \"1\",\n" +
+                "    \"q2\": \"1\",\n" +
+                "    \"q3\": \"1\",\n" +
+                "    \"q4\": \"2\"\n" +
+                "  },\n" +
+                "  \"name\": \"lso9\",\n" +
+                "  \"city\": \"jdbdjd\",\n" +
+                "  \"age\": \"45\",\n" +
+                "  \"s_id\": \"170823\",\n" +
+                "  \"recommendations\": {\n" +
+                "    \"r1\": {\n" +
+                "      \"url\": \"http://italika.mx/WebVisorArchivosITK/Archivo.aspx?Tipo=3&Archivo=WebPortalMexicoITK/img/Modelos/Trabajo/Maxis/FT250TS.png\",\n" +
+                "      \"model\": \"FT 250 TS\",\n" +
+                "      \"description\": \"Esta motocicleta de trabajo es para los que buscan una fiel compañera que les permita ser más productivos en sus días.\",\n" +
+                "      \"currentPrice\": 36109.64,\n" +
+                "      \"realPrice\": 30999,\n" +
+                "      \"specs\": {\n" +
+                "        \"engine\": [\n" +
+                "          {\n" +
+                "            \"title\": \"Tips de motor\",\n" +
+                "            \"description\": \"4 Tiempos, monocilindrico\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Cilindrada\",\n" +
+                "            \"description\": \"250 CC\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Velocidad máxima\",\n" +
+                "            \"description\": \"120 km/h\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Potencia máxima\",\n" +
+                "            \"description\": \"18 Hp @ 8500 RPM\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Torque máximo\",\n" +
+                "            \"description\": \"16.g N-m @ 6500 RPM\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Rendimiento de combustible\",\n" +
+                "            \"description\": \"24 km/L\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Sistema de arranque\",\n" +
+                "            \"description\": \"Eléctrico y de pedal\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Transmisión Final\",\n" +
+                "            \"description\": \"16 L\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Rendimiento de combustible por tanque\",\n" +
+                "            \"description\": \"384 km\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Capacidad de Aceite\",\n" +
+                "            \"description\": \"1.1 L\"\n" +
+                "          }\n" +
+                "        ],\n" +
+                "        \"chasis\": [\n" +
+                "          {\n" +
+                "            \"title\": \"Suspensión delantera\",\n" +
+                "            \"description\": \"Horquilla telescópica\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Suspensión trasera\",\n" +
+                "            \"description\": \"Basculante con doble amortiguador\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Frenos delanteros\",\n" +
+                "            \"description\": \"Disco sencillo\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Frenos traseros\",\n" +
+                "            \"description\": \"Tambor\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Llanta delantera\",\n" +
+                "            \"description\": \"80/90-R18\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Llanta trasera\",\n" +
+                "            \"description\": \"110/80-R18\"\n" +
+                "          }\n" +
+                "        ],\n" +
+                "        \"dims\": [\n" +
+                "          {\n" +
+                "            \"title\": \"Largo total\",\n" +
+                "            \"description\": \"2100 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Ancho total\",\n" +
+                "            \"description\": \"700 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Alto total\",\n" +
+                "            \"description\": \"1030 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Altura del asiento\",\n" +
+                "            \"description\": \"770 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Capacidad de carga\",\n" +
+                "            \"description\": \"150 kg\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Peso en seco\",\n" +
+                "            \"description\": \"124.5 kg\"\n" +
+                "          }\n" +
+                "        ]\n" +
+                "      }\n" +
+                "    },\n" +
+                "    \"r2\": {\n" +
+                "      \"url\": \"http://italika.mx/WebVisorArchivosITK/Archivo.aspx?Tipo=3&Archivo=WebPortalMexicoITK/img/Modelos/Trabajo/Maxis/FT150TS.png\",\n" +
+                "      \"model\": \"ZT 350 TS\",\n" +
+                "      \"description\": \"Esta motocicleta de trabajo es para los que buscan una fiel compañera que les permita ser más productivos en sus días.\",\n" +
+                "      \"currentPrice\": 40000.64,\n" +
+                "      \"realPrice\": 40000,\n" +
+                "      \"specs\": {\n" +
+                "        \"engine\": [\n" +
+                "          {\n" +
+                "            \"title\": \"Tips de motor\",\n" +
+                "            \"description\": \"4 Tiempos, monocilindrico\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Cilindrada\",\n" +
+                "            \"description\": \"250 CC\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Velocidad máxima\",\n" +
+                "            \"description\": \"120 km/h\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Potencia máxima\",\n" +
+                "            \"description\": \"18 Hp @ 8500 RPM\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Torque máximo\",\n" +
+                "            \"description\": \"16.g N-m @ 6500 RPM\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Rendimiento de combustible\",\n" +
+                "            \"description\": \"24 km/L\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Sistema de arranque\",\n" +
+                "            \"description\": \"Eléctrico y de pedal\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Transmisión Final\",\n" +
+                "            \"description\": \"16 L\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Rendimiento de combustible por tanque\",\n" +
+                "            \"description\": \"384 km\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Capacidad de Aceite\",\n" +
+                "            \"description\": \"1.1 L\"\n" +
+                "          }\n" +
+                "        ],\n" +
+                "        \"chasis\": [\n" +
+                "          {\n" +
+                "            \"title\": \"Suspensión delantera\",\n" +
+                "            \"description\": \"Horquilla telescópica\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Suspensión trasera\",\n" +
+                "            \"description\": \"Basculante con doble amortiguador\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Frenos delanteros\",\n" +
+                "            \"description\": \"Disco sencillo\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Frenos traseros\",\n" +
+                "            \"description\": \"Tambor\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Llanta delantera\",\n" +
+                "            \"description\": \"80/90-R18\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Llanta trasera\",\n" +
+                "            \"description\": \"110/80-R18\"\n" +
+                "          }\n" +
+                "        ],\n" +
+                "        \"dims\": [\n" +
+                "          {\n" +
+                "            \"title\": \"Largo total\",\n" +
+                "            \"description\": \"2100 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Ancho total\",\n" +
+                "            \"description\": \"700 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Alto total\",\n" +
+                "            \"description\": \"1030 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Altura del asiento\",\n" +
+                "            \"description\": \"770 mm\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Capacidad de carga\",\n" +
+                "            \"description\": \"150 kg\"\n" +
+                "          },\n" +
+                "          {\n" +
+                "            \"title\": \"Peso en seco\",\n" +
+                "            \"description\": \"124.5 kg\"\n" +
+                "          }\n" +
+                "        ]\n" +
+                "      }\n" +
+                "    }\n" +
+                "  },\n" +
+                "  \"createdAt\": \"2019-08-25T09:10:51.106Z\",\n" +
+                "  \"updatedAt\": \"2019-08-25T09:10:51.106Z\",\n" +
+                "  \"__v\": 0\n" +
+                "}"
+        val survey = Gson().fromJson(json, Survey::class.java)
+        onComplete(survey)
+        /*
         val url = "${NetworkConstant.BASE_URL}$id"
         val request = object : JsonObjectRequest(Method.GET, url, JSONObject(),
             Response.Listener<JSONObject> { response: JSONObject? ->
@@ -68,6 +295,7 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
             }) {
         }
         requestQueue.add(request)
+        */
     }
 
     companion object {
