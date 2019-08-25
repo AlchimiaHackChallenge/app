@@ -6,5 +6,5 @@ package mx.nakva.apphack.network;
  */
 public class NetworkConstant {
 
-    public static final String BASE_URL = "http://10.10.4.244:3000/api/intent/";
+    public static final String BASE_URL = "http://10.0.0.65:3000/api/intent/";
 }

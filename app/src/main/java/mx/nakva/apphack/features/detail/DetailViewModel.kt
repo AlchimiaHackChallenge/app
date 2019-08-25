@@ -8,4 +8,9 @@ import javax.inject.Inject
  * Powered by Arteko
  */
 class DetailViewModel @Inject constructor(): ViewModel() {
+
+    fun loadData() {
+
+    }
+
 }
