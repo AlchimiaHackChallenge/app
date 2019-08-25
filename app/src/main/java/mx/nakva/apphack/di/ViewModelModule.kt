@@ -6,6 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import mx.nakva.apphack.MainViewModel
+import mx.nakva.apphack.features.profile.ProfileViewModel
 import mx.nakva.apphack.features.survey.SurveyViewModel
 import javax.inject.Singleton
 
@@ -24,6 +25,12 @@ abstract class ViewModelModule {
     @ViewModelKey(MainViewModel::class)
     @Singleton
     internal abstract fun provideViewModel(viewModel: MainViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ProfileViewModel::class)
+    @Singleton
+    internal abstract fun provideProfileViewModel(viewModel: ProfileViewModel): ViewModel
 
     @Binds
     @IntoMap
