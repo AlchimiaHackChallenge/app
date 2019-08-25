@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    >
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="product"
+            type="mx.nakva.apphack.models.Product" />
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -11,6 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#ffffff"
             android:orientation="vertical">
 
             <ProgressBar
@@ -33,7 +38,8 @@
             <ImageView
                 android:layout_marginTop="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="180dp"
+                bind:imageUrl="@{product.url}"
                 android:layout_marginStart="64dp"
                 android:layout_marginEnd="64dp"
                 android:contentDescription="@string/app_name"/>
@@ -44,6 +50,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="18sp"
+                android:text="@{product.model}"
                 android:textStyle="bold"
                 tools:text="Name" />
 
@@ -53,6 +60,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
+                bind:priceFrom="@{product.realPrice}"
                 android:textStyle="italic"
                 tools:text="De $200.00" />
 
@@ -61,8 +69,9 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textColor="@color/red"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
+                bind:priceFrom="@{product.currentPrice}"
                 tools:text="A $133.00" />
 
             <TextView
@@ -73,6 +82,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="8dp"
                 android:layout_margin="16dp"
+                android:text="@{product.description}"
                 android:textStyle="italic"
                 tools:text="Description" />
 
@@ -99,6 +109,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:text="@{product.specs.engine[0].description}"
                     android:textColor="@color/colorPrimary"
                     android:layout_weight="2"/>
 
@@ -127,6 +138,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:text="@{product.specs.engine[1].description}"
                     android:textColor="@color/colorPrimary"
                     android:layout_weight="2"/>
 
@@ -156,6 +168,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:textColor="@color/colorPrimary"
+                    android:text="@{product.specs.engine[2].description}"
                     android:layout_weight="2"/>
 
             </LinearLayout>
@@ -184,6 +197,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:textColor="@color/colorPrimary"
+                    android:text="@{product.specs.engine[8].description}"
                     android:layout_weight="2"/>
 
             </LinearLayout>
