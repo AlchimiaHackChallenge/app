@@ -33,4 +33,8 @@
     <string name="ref_number">NO. DE REFERENCIA</string>
     <string name="more">Ver más</string>
     <string name="error_loading_profile">Se produjo un error al cargar los datos de la referencia.</string>
+    <string name="engine_type">Tipo de motor</string>
+    <string name="cilindrada">Cilindrada</string>
+    <string name="max_speed">Velocidad máxima</string>
+    <string name="capacity">Capacidad de Combustible</string>
 </resources>
