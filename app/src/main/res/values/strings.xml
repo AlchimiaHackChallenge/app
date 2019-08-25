@@ -26,4 +26,5 @@
     <string name="name">Nombre</string>
     <string name="age">Edad</string>
     <string name="city">Ciudad</string>
+    <string name="quote">Cotizar ahora</string>
 </resources>
