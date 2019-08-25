@@ -9,7 +9,8 @@ import javax.inject.Singleton
  * Powered by Arteko
  */
 @Singleton
-@Component(modules = [AppModule::class, ViewModelModule::class, DatabaseModule::class])
+@Component(modules = [AppModule::class, ViewModelModule::class,
+    DatabaseModule::class, NetworkModule::class])
 interface AppComponent {
     fun inject(target: MainActivity)
 }
