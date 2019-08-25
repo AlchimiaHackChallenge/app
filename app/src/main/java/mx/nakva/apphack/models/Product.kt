@@ -9,5 +9,7 @@ data class Product(
     val model: String,
     val description: String,
     val currentPrice: Double,
-    val realPrice: Double) {
+    val realPrice: Double,
+    val specs: Spec
+    ) {
 }
