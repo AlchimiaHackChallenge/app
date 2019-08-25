@@ -1,6 +1,7 @@
 package mx.nakva.apphack
 
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
@@ -16,6 +17,7 @@ class MainViewModel @Inject constructor(): ViewModel() {
 
     fun onClickSearchBtn() {
         Log.d(TAG, "NAILAH onClickSearchBtn: ")
+        mState.progressVisibility = View.VISIBLE
     }
 
     fun onClickNewSession() {

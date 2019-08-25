@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:indeterminate="true"
             android:indeterminateTint="@color/colorPrimary"
-            android:visibility="invisible" />
+            android:visibility="@{state.progressVisibility}" />
 
         <RelativeLayout
             android:layout_width="match_parent"
