@@ -22,9 +22,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".features.survey.SurveyActivity"
+        <activity
+            android:name=".features.survey.SurveyActivity"
+            android:label="@string/survey"
             android:screenOrientation="portrait"
-            android:label="@string/survey"/>
+            android:theme="@style/AppTheme.NoTitle" />
 
         <activity android:name=".features.profile.ProfileActivity"
             android:screenOrientation="portrait"
