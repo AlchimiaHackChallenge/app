@@ -1,5 +1,6 @@
 package mx.nakva.apphack.features
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
@@ -8,4 +9,12 @@ import javax.inject.Inject
  * Powered by Arteko
  */
 class SurveyViewModel @Inject constructor(): ViewModel() {
+
+    fun onClickNextBtn() {
+        Log.d(TAG, "NAILAH onClickNextBtn ")
+    }
+
+    companion object {
+        private const val TAG = "SurveyViewModel"
+    }
 }

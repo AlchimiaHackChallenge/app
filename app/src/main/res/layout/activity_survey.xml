@@ -4,7 +4,11 @@
     xmlns:bind="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data></data>
+    <data>
+        <variable
+            name="vm"
+            type="mx.nakva.apphack.features.SurveyViewModel" />
+    </data>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -210,6 +214,7 @@
                     android:backgroundTint="@color/colorPrimary"
                     android:textColor="@color/textIcons"
                     android:text="@string/next"
+                    android:onClick="@{ () -> vm.onClickNextBtn() }"
                     android:layout_marginBottom="16dp"
                     />
 
