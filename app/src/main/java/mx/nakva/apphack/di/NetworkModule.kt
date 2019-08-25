@@ -11,7 +11,7 @@ import javax.inject.Singleton
  * Created by Juancho - j.herandez@arteko.mx on 25/08/19.
  * Powered by Arteko
  */
-@Module(includes = [AppComponent::class])
+@Module(includes = [AppModule::class])
 class NetworkModule {
 
     @Provides

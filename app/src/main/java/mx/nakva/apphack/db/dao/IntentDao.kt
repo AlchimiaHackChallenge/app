@@ -7,6 +7,7 @@ import mx.nakva.apphack.db.entities.DBIntent
  * Created by Juancho - j.herandez@arteko.mx on 25/08/19.
  * Powered by Arteko
  */
+@Dao
 interface IntentDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
