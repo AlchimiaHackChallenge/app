@@ -18,8 +18,6 @@ import javax.inject.Inject
 class SurveyService @Inject constructor(private val requestQueue: RequestQueue) {
 
     fun sendSurvey(state: SurveyState, onComplete: (sId: String?) -> Unit) {
-        onComplete("asdad")
-        /*
         val url = NetworkConstant.BASE_URL
         val param = JSONObject()
         val widget = JSONObject()
@@ -50,10 +48,10 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
             }) {
         }
         requestQueue.add(request)
-         */
     }
 
     fun getSurvey(id: String, onComplete: (Survey?) -> Unit) {
+        /*
         val json = "{\n" +
                 "  \"_id\": \"5d62509be1626d3df609aece\",\n" +
                 "  \"widget\": {\n" +
@@ -280,7 +278,7 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
                 "}"
         val survey = Gson().fromJson(json, Survey::class.java)
         onComplete(survey)
-        /*
+         */
         val url = "${NetworkConstant.BASE_URL}$id"
         val request = object : JsonObjectRequest(Method.GET, url, JSONObject(),
             Response.Listener<JSONObject> { response: JSONObject? ->
@@ -298,7 +296,6 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
             }) {
         }
         requestQueue.add(request)
-        */
     }
 
     companion object {
