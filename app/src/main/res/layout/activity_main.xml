@@ -6,13 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/tool_bar" />
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="invisible"
+        android:indeterminateTint="@color/colorPrimary"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"/>
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp">
-
 
         <View
             android:layout_width="match_parent"
@@ -69,8 +75,5 @@
             android:id="@+id/btnNewSession"
             />
 
-
-
     </RelativeLayout>
-
 </LinearLayout>
