@@ -1,6 +1,7 @@
 package mx.nakva.apphack.features.profile
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -29,10 +30,6 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
 
     fun getDetailObserver(): LiveData<Event<String>> = mDetailLauncher
 
-    init {
-
-    }
-
     @SuppressLint("DefaultLocale")
     fun loadSurvey(id: String) {
         mState.progressVisibility = View.VISIBLE
@@ -40,6 +37,7 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
             this.mSurvey = survey
             mState.progressVisibility = View.INVISIBLE
             if (survey != null) {
+                Log.d(TAG, "NAILAH loadSurvey: $survey")
                 mState.name = survey.name.toUpperCase()
                 mState.age = survey.age
                 mState.city = survey.city.toUpperCase()
@@ -73,5 +71,9 @@ class ProfileViewModel @Inject constructor(private val mService: SurveyService):
         val survey = mSurvey ?: return
         val r2 = survey.recommendations.r2
         mDetailLauncher.value = Event(Gson().toJson(r2))
+    }
+
+    companion object {
+        private const val TAG = "ProfileViewModel"
     }
 }

@@ -284,6 +284,7 @@ class SurveyService @Inject constructor(private val requestQueue: RequestQueue) 
             Response.Listener<JSONObject> { response: JSONObject? ->
                 if (response != null) {
                     val survey = Gson().fromJson(response.toString(), Survey::class.java)
+                    Log.d(TAG, "NAILAH getSurvey: $response ")
                     onComplete(survey)
                 }
                 else {

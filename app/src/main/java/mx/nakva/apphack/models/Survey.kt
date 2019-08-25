@@ -8,8 +8,8 @@ import com.google.gson.annotations.SerializedName
  */
 data class Survey (
     @SerializedName("s_id") val sId: String,
-    val name: String,
-    val city: String,
-    val age: String,
+    val name: String = "",
+    val city: String = "",
+    val age: String = "",
     val recommendations: Recommendations){
 }
