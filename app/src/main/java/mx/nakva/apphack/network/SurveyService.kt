@@ -16,15 +16,16 @@ import javax.inject.Inject
 class SurveyService @Inject constructor(private val requestQueue: RequestQueue) {
 
     fun sendSurvey(onComplete: (String?, String?) -> Unit) {
-        val url = "10.10.4.244:3000/api/intent"
+        val url = "http://10.10.4.244:3000/api/intent"
         val param = JSONObject()
 
         val request = object : JsonObjectRequest(Method.POST, url, param,
             Response.Listener<JSONObject> { response: JSONObject? ->
-                Log.d(TAG, "NAILAH sendSurvey: success")
+                Log.d(TAG, "NAILAH sendSurvey: success $response")
             },
             Response.ErrorListener { error: VolleyError ->
                 Log.d(TAG, "NAILAH sendSurvey: Error")
+                error.printStackTrace()
             }) {
         }
         requestQueue.add(request)

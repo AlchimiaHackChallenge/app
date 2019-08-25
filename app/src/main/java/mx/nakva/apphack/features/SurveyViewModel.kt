@@ -4,18 +4,21 @@ import android.util.Log
 import android.widget.RadioGroup
 import androidx.lifecycle.ViewModel
 import mx.nakva.apphack.R
+import mx.nakva.apphack.network.SurveyService
 import javax.inject.Inject
 
 /**
  * Created by Juancho - j.herandez@arteko.mx on 25/08/19.
  * Powered by Arteko
  */
-class SurveyViewModel @Inject constructor(): ViewModel() {
+class SurveyViewModel @Inject constructor(private val mService: SurveyService): ViewModel() {
 
     private var mState: SurveyState = SurveyState()
 
     fun onClickNextBtn() {
-        Log.d(TAG, "NAILAH onClickNextBtn ")
+        mService.sendSurvey { id, error -> 
+            Log.d(TAG, "NAILAH onClickNextBtn: id: $id, error: $error")
+        }
     }
 
     fun onRadioGroupChanged(id: Int) {
