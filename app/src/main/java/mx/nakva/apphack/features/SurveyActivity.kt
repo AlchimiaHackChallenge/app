@@ -1,15 +1,18 @@
 package mx.nakva.apphack.features
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import mx.nakva.apphack.MyApp
 import mx.nakva.apphack.R
 import mx.nakva.apphack.databinding.ActivitySurveyBinding
+import mx.nakva.apphack.wrappers.Event
 import javax.inject.Inject
 
 /**
@@ -29,6 +32,7 @@ class SurveyActivity: AppCompatActivity() {
     private fun initViewModel() {
         (application as MyApp).appComponent.inject(this)
         val vm = ViewModelProviders.of(this, mViewModelFactory)[SurveyViewModel::class.java]
+        vm.getCloseActivityResultObserver().observe(this, Observer { onCloseActivityResultChanged(it) })
         initBinder(vm)
     }
 
@@ -37,6 +41,15 @@ class SurveyActivity: AppCompatActivity() {
         binder.lifecycleOwner = this
         binder.vm = vm
         binder.state = vm.getState()
+    }
+
+    private fun onCloseActivityResultChanged(event: Event<Int>?) {
+        event?.getContentIfNotHandled()?.let { sId ->
+            val intent = Intent()
+            intent.putExtra("id", sId)
+            setResult(Activity.RESULT_OK, intent)
+            finish()
+        }
     }
 
     companion object {
