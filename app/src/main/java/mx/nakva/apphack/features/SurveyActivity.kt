@@ -36,6 +36,7 @@ class SurveyActivity: AppCompatActivity() {
         val binder: ActivitySurveyBinding = DataBindingUtil.setContentView(this, R.layout.activity_survey)
         binder.lifecycleOwner = this
         binder.vm = vm
+        binder.state = vm.getState()
     }
 
     companion object {

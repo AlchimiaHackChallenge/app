@@ -23,4 +23,7 @@
     <string name="btw_200km_300km">Entre 200 km y 300 km</string>
     <string name="next">Siguiente</string>
     <string name="survey">Encuesta</string>
+    <string name="name">Nombre</string>
+    <string name="age">Edad</string>
+    <string name="city">Ciudad</string>
 </resources>

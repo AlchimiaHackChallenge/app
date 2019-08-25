@@ -8,6 +8,9 @@
         <variable
             name="vm"
             type="mx.nakva.apphack.features.SurveyViewModel" />
+        <variable
+            name="state"
+            type="mx.nakva.apphack.features.SurveyState" />
     </data>
 
     <ScrollView
@@ -225,6 +228,55 @@
                         android:textColor="@color/colorPrimary" />
 
                 </RadioGroup>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/labelName"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputName"
+                        android:layout_width="match_parent"
+                        android:text="@={state.name}"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/name"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/labelAge"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputAge"
+                        android:layout_width="match_parent"
+                        android:text="@={state.age}"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/age"
+                        android:inputType="number" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/labelCity"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputCity"
+                        android:layout_width="match_parent"
+                        android:text="@={state.city}"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/city"
+                        android:inputType="text" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_marginTop="16dp"

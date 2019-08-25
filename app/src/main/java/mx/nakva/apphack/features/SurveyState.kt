@@ -2,6 +2,7 @@ package mx.nakva.apphack.features
 
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
+import androidx.databinding.library.baseAdapters.BR
 
 /**
  * Created by Juancho - j.herandez@arteko.mx on 25/08/19.
@@ -14,8 +15,30 @@ class SurveyState: BaseObservable() {
     var q3Response: String = "1"
     var q4Response: String = "1"
 
+    @get:Bindable
+    var name: String = ""
+    set(value) {
+        field = value
+        notifyPropertyChanged(BR.name)
+    }
+
+    @get:Bindable
+    var city: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.city)
+        }
+
+    @get:Bindable
+    var age: String = ""
+        set(value) {
+            field = value
+            notifyPropertyChanged(BR.age)
+        }
+
     override fun toString(): String {
         return "Survey Sate: { q1Response: $q1Response, q2Response: $q2Response," +
-                " q3Response: $q3Response, q4Response: $q4Response }"
+                " q3Response: $q3Response, q4Response: $q4Response, " +
+                " name: $name, age: $age, $city: city}"
     }
 }
