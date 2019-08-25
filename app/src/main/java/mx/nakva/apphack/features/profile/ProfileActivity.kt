@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.squareup.picasso.Picasso
 import mx.nakva.apphack.MyApp
 import mx.nakva.apphack.R
 import mx.nakva.apphack.databinding.ActivityProfileBinding
@@ -41,6 +42,8 @@ class ProfileActivity: AppCompatActivity() {
         binder.vm = vm
         binder.state = vm.getState()
         binder.lifecycleOwner = this
+        val url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK1uiEiCql_ilBbUoLSATpXLE6gwdbWsJSFCv6p1Iuf5pLsGLS"
+        Picasso.with(this).load(url).fit().centerInside().into(binder.imageView)
     }
 
     companion object {
