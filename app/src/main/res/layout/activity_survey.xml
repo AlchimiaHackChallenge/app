@@ -64,17 +64,21 @@
 
                 <RadioGroup
                     android:layout_width="match_parent"
+                    android:onCheckedChanged="@{(rdg, id) -> vm.onRadioGroupChanged(id)}"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ1R1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:layout_marginTop="6dp"
                         android:background="@color/colorPrimaryLight"
                         android:text="@string/yes"
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ1R2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -94,10 +98,13 @@
 
                 <RadioGroup
                     android:layout_width="match_parent"
+                    android:onCheckedChanged="@{(rdg, id) -> vm.onRadioGroupChanged(id)}"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ2R1"
                         android:layout_width="match_parent"
+                        android:checked="true"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
                         android:background="@color/colorPrimaryLight"
@@ -105,6 +112,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ2R2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -113,6 +121,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ2R3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -132,17 +141,21 @@
 
                 <RadioGroup
                     android:layout_width="match_parent"
+                    android:onCheckedChanged="@{(rdg, id) -> vm.onRadioGroupChanged(id)}"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ3R1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:layout_marginTop="6dp"
                         android:background="@color/colorPrimaryLight"
                         android:text="@string/until_15_k"
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ3R2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -151,6 +164,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ3R3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -159,6 +173,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ3R4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -178,9 +193,12 @@
 
                 <RadioGroup
                     android:layout_width="match_parent"
+                    android:onCheckedChanged="@{(rdg, id) -> vm.onRadioGroupChanged(id)}"
                     android:layout_height="wrap_content">
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ4R1"
+                        android:checked="true"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -189,6 +207,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ4R2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -197,6 +216,7 @@
                         android:textColor="@color/colorPrimary" />
 
                     <RadioButton
+                        android:id="@+id/rdBtnQ4R3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
